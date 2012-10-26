@@ -1,0 +1,59 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:sec="http://www.springframework.org/schema/security" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+                           http://www.springframework.org/schema/security
+                           http://www.springframework.org/schema/security/spring-security-3.1.xsd">
+                           
+       <sec:http pattern="/user/**"  security="none" />
+              
+     
+     
+       <sec:http pattern="/**" use-expressions="true" entry-point-ref="pubEntryPoint">
+        <sec:custom-filter ref="pubFormLogin" position="FORM_LOGIN_FILTER" />     
+        <sec:intercept-url pattern="/userdetails/**" access="hasRole('ROLE_ADMIN')" />  
+        <sec:access-denied-handler ref="accessDeniedHandler" />
+    </sec:http>       
+    
+   
+    <sec:authentication-manager alias="authenticationManager">
+        <sec:authentication-provider ref="mainAuthenticationProvider" />
+    </sec:authentication-manager> 
+    
+     <bean id="mainAuthenticationProvider" class="com.malli.sec.MainAuthenticationProvider" />
+    
+      <bean id="pubFormLogin" class="com.malli.sec.MainUpaFilter">
+        <property name="authenticationManager" ref="authenticationManager" />
+        <property name="filterProcessesUrl" value="/pub/j_spring_security_check" />
+        <property name="authenticationSuccessHandler">
+            <bean class="org.springframework.security.web.authentication.SavedRequestAwareAuthenticationSuccessHandler">
+                <property name="defaultTargetUrl" value="/menu" />
+            </bean>
+        </property>
+        <property name="authenticationFailureHandler">
+            <bean class="org.springframework.security.web.authentication.SimpleUrlAuthenticationFailureHandler">
+                <property name="defaultFailureUrl" value="/pub/login?login_error=1" />
+            </bean>
+        </property>
+        <property name="sessionAuthenticationStrategy">
+            <bean class="org.springframework.security.web.authentication.session.SessionFixationProtectionStrategy" />
+        </property>
+    </bean>
+    
+    <bean id="accessDeniedHandler" class="com.malli.sec.MainAccessDeniedHandler">
+        <property name="redirectPage" value="/pub/login" />
+    </bean>
+    
+    <bean id="pubExceptionTranslator"
+        class="org.springframework.security.web.access.ExceptionTranslationFilter">
+        <property name="authenticationEntryPoint" ref="pubEntryPoint" />
+        <property name="accessDeniedHandler" ref="accessDeniedHandler" />
+    </bean>
+    
+    <bean id="pubEntryPoint"
+        class="org.springframework.security.web.authentication.LoginUrlAuthenticationEntryPoint">
+        <property name="loginFormUrl" value="/pub/login" />
+    </bean> 
+                           
+
+</beans>

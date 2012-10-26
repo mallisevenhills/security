@@ -34,7 +34,7 @@ public class LoginController {
     public ModelAndView userDetails() {
 		Iterable<User> allUser = userRepo.findAll();
     	ModelAndView view = new ModelAndView("menu");
-    	view.addObject("menu", allUser);
+    	view.addObject("menuinfo", allUser);
         return view;
     }
 

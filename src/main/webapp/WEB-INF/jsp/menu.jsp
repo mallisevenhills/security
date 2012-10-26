@@ -4,7 +4,6 @@
 <body>
 <ul>
 <li><a href="userdetails">Get Details with MVC style</a></li></br>
-<li><a href="javascript:load();">Get Details with Rest Full style</a></li>
 </ul>
 
 <c:if test="${ not empty menuinfo }">
@@ -13,10 +12,6 @@
 </c:forEach>    
 </c:if>
 </body>
-
-<script type="text/javascript">
-function load() {alert("calling");}
-</script>
 </html>
 
 

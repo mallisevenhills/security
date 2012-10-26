@@ -3,7 +3,7 @@
 <html>
 <body>
 <ul>
-<li><a href="userdetails">Get Details with MVC style</a></li></br>
+<li><a href="userdetails">Get Details</a></li></br>
 </ul>
 
 <c:if test="${ not empty menuinfo }">

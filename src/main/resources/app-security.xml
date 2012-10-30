@@ -6,12 +6,15 @@
                            http://www.springframework.org/schema/security/spring-security-3.1.xsd">
                            
        <sec:http pattern="/user/**"  security="none" />
+       <sec:http pattern="/js/**" security="none"/>
+       <sec:http pattern="/css/**" security="none"/>
+       <sec:http pattern="/img/**" security="none"/>
               
      
      
        <sec:http pattern="/**" use-expressions="true" entry-point-ref="pubEntryPoint">
         <sec:custom-filter ref="pubFormLogin" position="FORM_LOGIN_FILTER" />     
-        <sec:intercept-url pattern="/userdetails/**" access="hasRole('ROLE_ADMIN')" />  
+        <sec:intercept-url pattern="/mvc/userdetails/**" access="hasRole('ROLE_ADMIN')" />  
         <sec:access-denied-handler ref="accessDeniedHandler" />
     </sec:http>       
     
@@ -24,15 +27,15 @@
     
       <bean id="pubFormLogin" class="com.malli.sec.MainUpaFilter">
         <property name="authenticationManager" ref="authenticationManager" />
-        <property name="filterProcessesUrl" value="/pub/j_spring_security_check" />
+        <property name="filterProcessesUrl" value="/mvc/pub/j_spring_security_check" />
         <property name="authenticationSuccessHandler">
             <bean class="org.springframework.security.web.authentication.SavedRequestAwareAuthenticationSuccessHandler">
-                <property name="defaultTargetUrl" value="/menu" />
+                <property name="defaultTargetUrl" value="/mvc/menu" />
             </bean>
         </property>
         <property name="authenticationFailureHandler">
             <bean class="org.springframework.security.web.authentication.SimpleUrlAuthenticationFailureHandler">
-                <property name="defaultFailureUrl" value="/pub/login?login_error=1" />
+                <property name="defaultFailureUrl" value="/mvc/pub/login?login_error=1" />
             </bean>
         </property>
         <property name="sessionAuthenticationStrategy">
@@ -41,7 +44,7 @@
     </bean>
     
     <bean id="accessDeniedHandler" class="com.malli.sec.MainAccessDeniedHandler">
-        <property name="redirectPage" value="/pub/login" />
+        <property name="redirectPage" value="/mvc/pub/login" />
     </bean>
     
     <bean id="pubExceptionTranslator"

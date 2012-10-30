@@ -10,7 +10,7 @@
 <h3>Welcome <c:out value="${register.username}" /></h3>
 <table>
 <tr>
-<td><a href='<%=request.getContextPath() %>/login'>Sign In</a></td>
+<td><a href='<%=request.getContextPath() %>/mvc/login'>Sign In</a></td>
 </tr>
 </table>
 </body>

@@ -1,4 +1,4 @@
-<form action='<%= request.getContextPath() %>/pub/j_spring_security_check' method="post">
+<form action='<%= request.getContextPath() %>/mvc/pub/j_spring_security_check' method="post">
     <fieldset>
     <div>
       <div>

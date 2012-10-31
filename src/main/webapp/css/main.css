@@ -24,24 +24,34 @@
    height: 500px;
  }
  
+ .left-panle-wrapper {
+  width: :200px;
+  height: 400px;
+  float: left;
+  border: solid;
+  color: yellow;
+  overflow: auto;
+ }
+ 
 .left-panel {
-	width: 200px;
+	width: 190px;	
 	height:400px;
 	color: blue;
-	float: left;
-	margin-top: -15px;
+	margin-top: -20px;
 }
 
 .vtl-divider-1 {
 	background-image: url("../img/vertical.gif");
 	width: 10px;
-	height: 400px;
-	margin-left: 179px;
+	height:400px;
+	margin-left:180px;
+	margin-top: -400px;	
 }
 .rt-content {
 	width:200px;
 	height :400px;
 	color: blue;
+	overflow: auto;
 }
 
 .vtl-divider-2 {
@@ -50,6 +60,9 @@
 	background-image: url("../img/vertical.gif");
 	margin-left:845px;	
 	margin-top: -415px;	
+	border: solid;
+	color: yellow;
+	
 }
 .center-content {
 	padding-left: 190px;

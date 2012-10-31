@@ -26,7 +26,7 @@
  
  .left-panle-wrapper {
   width: :200px;
-  height: 400px;
+  height: auto;
   float: left;
   border: solid;
   color: yellow;
@@ -37,37 +37,45 @@
 	width: 190px;	
 	height:400px;
 	color: blue;
-	margin-top: -20px;
+	margin-top: -3px;
 }
 
-.vtl-divider-1 {
-	background-image: url("../img/vertical.gif");
+.vtl-divider-1 {	
 	width: 10px;
 	height:400px;
 	margin-left:180px;
 	margin-top: -400px;	
 }
-.rt-content {
-	width:200px;
-	height :400px;
-	color: blue;
+
+
+.rt-content-wrapper {
+	width: 190px;
+	height: auto;
+	border: solid;
+	color: red;
+	margin-left: 830px;
+	margin-top: -400px;	
 	overflow: auto;
 }
 
-.vtl-divider-2 {
+.vtl-divider-2 {	
+	width:10px;	
+	height:400px;
+}
+
+.rt-content {
+	width:189px;
 	height :400px;
-	width:10px;
-	background-image: url("../img/vertical.gif");
-	margin-left:845px;	
-	margin-top: -415px;	
-	border: solid;
-	color: yellow;
+	margin-top: -400px;
+	color: blue;
 	
 }
+
 .center-content {
-	padding-left: 190px;
-	width: 480px;
+	padding-left: 10px;
+	width: 610px;
 	height: 400px;
+	overflow: auto;
 }
 
 .footer {

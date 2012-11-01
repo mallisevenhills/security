@@ -1,9 +1,9 @@
 .wrapper {
 	margin: 60px auto;
 	width: 1024px;
-	height :auto;	
 	background: green;
 	border: dotted;
+	overflow: hidden;
 }
 
 .headers {

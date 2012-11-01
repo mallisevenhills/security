@@ -9,14 +9,32 @@
 .headers {
 	height: 30px;
 	width: 1024px;
-	background: red;
+	background: gray;
+	border: double;
 }
+
+.header-tab {
+	width: 1024px;
+	height: 30px;
+	list-style: none;
+	margin-top: 4px;
+}
+
+.header-link{
+ display:inline;
+}
+
+a:link {text-decoration:none;}
+a:visited {text-decoration:none;}
+a:hover {text-decoration:none;}
+a:active {text-decoration:none;}
 
 .hz-divider {
 	height: 20px;
 	width: 1024px;
-	background: yellow;
 	background-image: url("../img/divider_line.gif");
+	background: white;
+	
  }
  
  .content-panel {
@@ -83,4 +101,39 @@
 	width: 1024px;
 	background-color: red; 
 }
+
+.home, .contact,.sign-in, .join-us {
+	color: red;
+	position: fixed;
+}
+
+.home {
+	margin-top: -10px;
+	margin-left: 25px;
+}
+
+.contact {
+	margin-left: 90px;
+	margin-top: -10px;
+}
+.sign-in{
+	margin-left: 800px;
+	margin-top: -10px;	
+}
+.or{
+	color:lime;
+	margin-left: 860px;
+	margin-top: -10px;
+}
+
+.join-us {
+	margin-left: 895px;
+	margin-top: -50px;	
+}
+
+.footer>p{
+	color: blue;
+	text-align: center;
+}
+
 	

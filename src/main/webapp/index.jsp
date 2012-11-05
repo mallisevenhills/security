@@ -1,7 +1,6 @@
 <html>
 <head>
-<!-- <script src="http://code.jquery.com/jquery-1.7.js"  type="text/javascript"></script>-->
-<script type="text/javascript" src="js/jquery-1.7.js"></script>
+<script src="http://code.jquery.com/jquery-1.7.js"  type="text/javascript"></script>
 <script src="js/json2.js"  type="text/javascript"></script>
 </head>
 <body>

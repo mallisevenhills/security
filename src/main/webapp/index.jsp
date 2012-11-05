@@ -19,7 +19,7 @@
             $.ajax(
                 {
                     type: "GET",
-                    url: 'http://localhost:8080/sample/mvc/rest/getUserResponse',
+                    url: '<%= request.getContextPath()%>/mvc/rest/getUserResponse',
                     data: "{}",
                     contentType: "application/json; charset=utf-8",
                     dataType: "json",
@@ -33,7 +33,7 @@
     $("#rest-post").click(function (){
     	$.ajax(
     			{type: "POST", 
-    			url:  'http://localhost:8080/sample/mvc/rest/postUserResponse',
+    			url:  '<%= request.getContextPath()%>/mvc/rest/postUserResponse',
     			data: '{"id":"1"}',
     			contentType: "application/json; charset=utf-8",
     			dataType: "json",
